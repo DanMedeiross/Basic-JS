@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Course - Week 4</title>
+    </head>
+    <body>
+        <h1>Basic JS Course - Week 4</h1>
+        <script>
+            function zipCodeSearch() {
+                let zipCode = prompt("Which ZIP code do you want to search?");
+                let url = "https://brasilapi.com.br/api/cep/v2/" + zipCode;
+                fetch(url)
+                    .then(function(response){
+                        response.json()
+                            .then(function(data){
+                                console.log(data);
+                                alert("Your city is " + data.city 
+                                        + " at the neighborhood " + data.neighborhood 
+                                        + " at street " + data.street
+                                );
+                            });
+                    }).catch(function(error){
+                        console.log("An error has ocurred", error);
+                    });
+            }
+            zipCodeSearch();
+        </script>
+    </body>
+</html>

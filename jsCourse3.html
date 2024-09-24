@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Course - Week 3</title>
+    </head>
+    <body>
+        <h1>Basic JS Course - Week 3</h1>
+        <script>
+            let list = [];
+            let newItem = prompt("Enter item's name or - if you don't want to add");
+            while(newItem != "-") {
+                list.push(newItem);
+                newItem = prompt("Enter item's name or - if you don't want to add");
+            }
+            if(list.length == 0) {
+                alert("List is empty!");
+            } else {
+                alert("You must buy these items: ");
+                for(let i = 0; i < list.length; i++) {
+                    alert(list[i]);
+                }
+            }
+        </script>
+    </body>
+</html>
